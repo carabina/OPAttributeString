@@ -32,7 +32,8 @@ NSString *demoString = @"demo";
                     @"文字凸出效果",
                     @"基线偏移 + 文字倾斜 + 拉伸",
                     @"文字书写方向",
-                    @"后面追加字符串-属性字符串-图片"
+                    @"后面追加字符串-属性字符串-图片",
+                    @"众佳丽中的两种"
                     ];
     
     [self.view addSubview:self.tableView];
@@ -83,14 +84,6 @@ NSString *demoString = @"demo";
                 make.firstLineHeadIndent(40);
                 make.headIndent(20);
             }];
-            
-//            self.demoLabel.attributedText = despicableMe
-//            .font([UIFont fontWithName:@"Courier New" size:12])
-//            .textColor([UIColor redColor])
-//            .backgroundColor([UIColor greenColor])
-//            .append(@"append")
-//            .textColor([UIColor lightGrayColor])
-//            .append(@"AA").string;
             [self setRectWithFontSize:20 offset:CGPointMake(10, 10)];
         }
             break;
@@ -168,6 +161,17 @@ NSString *demoString = @"demo";
             .append(attributeString)
             .append(@"\r\n")
             .append(img,CGRectMake(0, 0, 18, 18),AttachmentAlignmentNormal).string;
+            [self setRectWithFontSize:20];
+        }
+            break;
+        case 9: {
+            
+            self.demoLabel.attributedText = @"冷热".pattern(@"冷").backgroundColor([UIColor blueColor]).textColor([UIColor whiteColor]).pattern(@"热").backgroundColor([UIColor redColor]).textColor([UIColor whiteColor]).string;
+            [self setRectWithFontSize:20];
+        }
+            break;
+        case 10: {
+            self.demoLabel.attributedText = @"cool".backgroundColor([UIColor blueColor]).textColor([UIColor whiteColor]).append(@"hot").backgroundColor([UIColor redColor]).textColor([UIColor whiteColor]).string;
             [self setRectWithFontSize:20];
         }
             break;

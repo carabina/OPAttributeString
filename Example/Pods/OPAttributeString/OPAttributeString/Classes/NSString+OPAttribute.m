@@ -8,7 +8,6 @@
 
 #import <objc/runtime.h>
 #import "OPAttribute.h"
-#define kWeakSelf __weak typeof(self) weakSelf = self;
 @implementation NSString (OPAttribute)
 
 - (OPAttribute *)attribute {
@@ -209,8 +208,7 @@
 }
 
 - (OPAttributeOperationBlock)append {
-    kWeakSelf
-    return weakSelf.attribute.append;
+    return self.attribute.append;
 }
 
 - (OPAttributeOperationBlock)removeE {
