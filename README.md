@@ -43,7 +43,7 @@ self.someLabel.attributedText = [despicableMe make_Attribute:^(OPAttribute *make
     .backgroundColor([UIColor greenColor]);
 }];
 ```
-or this
+or this minimalist writing 
 ```objective-c
 NSString *despicableMe = @"I know someone whoabccan fix that for you.";
 self.someLabel.attributedText = despicableMe.
@@ -119,7 +119,7 @@ self.someLabel.attributedText = [despicableMe make_Attribute:^(OPAttribute *make
 ```
 ![Alt 20180426_4.png](https://github.com/urm9ril/Material/blob/master/OPAttributeString/20180426_4.png?raw=true)
 
-the correction processing rules are as follows
+###### the correction processing rules are as follows
 ```objective-c
 NS_INLINE BOOL rangeCheck(NSRange range, NSRange rangeContainer) {
     if(range.location < 0 || rangeContainer.location < 0 || rangeContainer.location > range.length) return false;
@@ -186,6 +186,20 @@ self.demoLabel.attributedText = [despicableMe make_Attribute:^(OPAttribute *make
 }];
 ```
 ![Alt 20180426_9.png](https://github.com/urm9ril/Material/blob/master/OPAttributeString/20180426_9.png?raw=true)
+
+#### append(...)
+you can use it like insert(...), the difference between inserting and appending, appending always adding characters or strings to the end of the source string.
+```objective-c
+NSMutableAttributedString *attributeString = @"e".backgroundColor([UIColor redColor]).string;
+
+UIImage *img = [UIImage imageNamed:@"old_sj"];
+
+self.demoLabel.attributedText = @"".append(@"_append")
+.append(attributeString)
+.append(@"\r\n")
+.append(img,CGRectMake(0, 0, 18, 18),AttachmentAlignmentNormal).string;
+```
+![Alt 20180426_17.png](https://github.com/urm9ril/Material/blob/master/OPAttributeString/20180426_17.png?raw=true)
 
 #### regex pattern
 ```objective-c
