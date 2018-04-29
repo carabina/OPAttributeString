@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/urm9ril/OPAttributeString" # 你的主页
   s.source       = { :git => "https://github.com/urm9ril/OPAttributeString.git", :tag => "#{s.version}" }#你的仓库地址，不能用SSH地址
-  s.source_files = "OPAttributeString/Classes/*.{h,m}" # 你代码的位置， OPAttributeString/*.{h,m} 表示 OPAttributeString 文件夹下所有的.h和.m文件
+  s.source_files = "OPAttributeString/Classes/*.{h,m}"
   #s.public_header_files = 'OPAttributeString/Classes/OPAttributeString.h'   #公开头文件地址
   s.requires_arc = true # 是否启用ARC
   s.platform     = :ios, "8.0" #平台及支持的最低版本
