@@ -8,7 +8,6 @@
 
 #import "OPAttribute.h"
 
-
 NSString * const kLineSpacing                   = @"lineSpacing";
 NSString * const kParagraphSpacing              = @"paragraphSpacing";
 NSString * const kAlignment                     = @"alignment";

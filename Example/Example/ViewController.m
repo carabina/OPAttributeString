@@ -31,7 +31,8 @@ NSString *demoString = @"demo";
                     @"你看到我的影子了么?",
                     @"文字凸出效果",
                     @"基线偏移 + 文字倾斜 + 拉伸",
-                    @"文字书写方向"
+                    @"文字书写方向",
+                    @"后面追加字符串-属性字符串-图片"
                     ];
     
     [self.view addSubview:self.tableView];
@@ -83,7 +84,13 @@ NSString *demoString = @"demo";
                 make.headIndent(20);
             }];
             
-            self.demoLabel.attributedText = despicableMe.font([UIFont fontWithName:@"Courier New" size:12]).textColor([UIColor redColor]).backgroundColor([UIColor greenColor]).append(@"dd").string;
+//            self.demoLabel.attributedText = despicableMe
+//            .font([UIFont fontWithName:@"Courier New" size:12])
+//            .textColor([UIColor redColor])
+//            .backgroundColor([UIColor greenColor])
+//            .append(@"append")
+//            .textColor([UIColor lightGrayColor])
+//            .append(@"AA").string;
             [self setRectWithFontSize:20 offset:CGPointMake(10, 10)];
         }
             break;
@@ -150,6 +157,18 @@ NSString *demoString = @"demo";
                 make.writingDirection(NSWritingDirectionRightToLeft | NSWritingDirectionOverride);
             }];
             [self setRectWithFontSize:17 offset:CGPointMake(80, 0)];
+        }
+            break;
+        case 8: {
+            NSMutableAttributedString *attributeString = @"e".backgroundColor([UIColor redColor]).string;
+            
+            UIImage *img = [UIImage imageNamed:@"old_sj"];
+            
+            self.demoLabel.attributedText = @"".append(@"_append")
+            .append(attributeString)
+            .append(@"\r\n")
+            .append(img,CGRectMake(0, 0, 18, 18),AttachmentAlignmentNormal).string;
+            [self setRectWithFontSize:20];
         }
             break;
             

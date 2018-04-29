@@ -43,6 +43,15 @@ self.someLabel.attributedText = [despicableMe make_Attribute:^(OPAttribute *make
     .backgroundColor([UIColor greenColor]);
 }];
 ```
+or this
+```objective-c
+NSString *despicableMe = @"I know someone whoabccan fix that for you.";
+self.someLabel.attributedText = despicableMe.
+font([UIFont fontWithName:@"Courier New" size:12])
+.textColor([UIColor redColor])
+.backgroundColor([UIColor greenColor])
+.string;
+```
 now you can see it.
 
 ![Alt 20180426.png](https://github.com/urm9ril/Material/blob/master/OPAttributeString/20180426.png?raw=true)

@@ -8,15 +8,16 @@
 
 #import <objc/runtime.h>
 #import "OPAttribute.h"
-
+#define kWeakSelf __weak typeof(self) weakSelf = self;
 @implementation NSString (OPAttribute)
 
 - (OPAttribute *)attribute {
-    OPAttribute *attribute = objc_getAssociatedObject(self, _cmd);
-    if (!attribute) {
-        attribute = [[OPAttribute alloc] initWithString:self];
-        objc_setAssociatedObject(self, _cmd, attribute, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
+    OPAttribute *attribute = [[OPAttribute alloc] initWithString:self];
+    //objc_getAssociatedObject(self, _cmd);
+//    if (!attribute) {
+//        attribute = [[OPAttribute alloc] initWithString:self];
+//        objc_setAssociatedObject(self, _cmd, attribute, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//    }
     return attribute;
 }
 
@@ -208,7 +209,8 @@
 }
 
 - (OPAttributeOperationBlock)append {
-    return self.attribute.append;
+    kWeakSelf
+    return weakSelf.attribute.append;
 }
 
 - (OPAttributeOperationBlock)removeE {

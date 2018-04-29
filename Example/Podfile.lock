@@ -1,16 +1,16 @@
 PODS:
-  - OPAttributeString (0.0.5)
+  - OPAttributeString (0.0.6)
 
 DEPENDENCIES:
-  - OPAttributeString (= 0.0.5)
+  - OPAttributeString
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - OPAttributeString
 
 SPEC CHECKSUMS:
-  OPAttributeString: 7862ac91663f1f539500b817fc67de6d61bf275f
+  OPAttributeString: beaba0a1cfaea615a50f7093e4266a365c6e1a82
 
-PODFILE CHECKSUM: e279940f4c1607c92c62697ae8ab6cfa60d155dd
+PODFILE CHECKSUM: 6d7a1917f441c6cc04f7486d7a3f2bfa1925b111
 
 COCOAPODS: 1.5.0
